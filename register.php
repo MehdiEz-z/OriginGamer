@@ -11,16 +11,16 @@
 </head>  
 <body>
     <div class="login">
-        <div class="row">
+        <div class="row vw-100">
             <div class="col-lg-7 d-none d-lg-block pe-0">
-                <div class="background-right" style="height: 100vh; 
-                background: url(assets/images/backgrounds/bg3.jpg); background-size: cover;"> 
+                <div class="">
+                    <img src="assets/images/backgrounds/bg.jpg" class="d-block vh-100" alt="">
                 </div>
             </div>
             <div class="col-lg-5 bg-white d-flex justify-content-center ps-0">
                 <div class="d-flex justify-content-center flex-column text-center col-lg-8 col-md-8 col-sm-8" style="min-height: 100vh;">
                     <div class="mt-5">
-                        <img src="assets/images/logos/YC-gamer.png" width="80%">
+                        <img src="assets/images/logos/YC-gamer 1.png" width="80%">
                     </div>
                     <div class="mt-5 mb-4">
                         <h2 style="color: #824af8;">Sign Up</h2>
