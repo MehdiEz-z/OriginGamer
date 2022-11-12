@@ -1,12 +1,28 @@
 *{
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-.sign-in-btn{
-    background: linear-gradient(45deg, #824af8, #b14ffc);
-    color: white;
-    width: 80%;
+.lien a{
+    color: black;
+    font-weight: 500;
+    font-size: large;
 }
-
+.lien a:hover{
+    color: #824af8;
+}
+.liens a{
+    color: white;
+    font-weight: 500;
+    font-size: medium;
+}
+.liens a:hover{
+    color: #824af8;
+}
+.login-btn,.sign-up-btn{
+    background: linear-gradient(90deg, rgba(177,79,252,1) 0%, rgba(130,74,248,1) 100%);
+    width: 100%;
+    color: white;
+    font-weight: 400;
+}
