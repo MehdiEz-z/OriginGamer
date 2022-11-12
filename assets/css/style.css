@@ -26,3 +26,15 @@
     color: white;
     font-weight: 400;
 }
+.msg-condition{
+    font-size: small;
+    color: gray;
+}
+.msg-condition a{
+    text-decoration: none;
+    color: gray;
+    font-weight: 600;
+}
+.msg-condition a:hover{
+    color: #824af8;
+}
