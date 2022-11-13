@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouCode | Origin Gamer</title>
+    <title>SignUp | Origin Gamer</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,11 +14,10 @@
 
 </head>
 <body>
-
     <div class="d-flex align-items-center justify-content-between px-5 py-4">
 
         <div>
-            <a href="accueil.html"><img class ="logo" src="assets/images/logos/YC-gamer 1.png" alt="logo" width="200"></a>
+            <a href="accueil.php"><img class ="logo" src="assets/images/logos/YC-gamer 1.png" alt="logo" width="200"></a>
         </div>
 
         <div class="d-flex">
@@ -31,11 +30,11 @@
         </div>
 
         <div class="lien">
-            <a class="text-decoration-none" href="login.html">Connectez-vous</a>
+            <a class="text-decoration-none" href="login.php">Connectez-vous</a>
         </div>
 
         <div class="lien">
-            <a class="text-decoration-none" href="signup.html">Inscrivez-vous</a>
+            <a class="text-decoration-none" href="signup.php">Inscrivez-vous</a>
         </div>
 
         <div class="lien">   
@@ -54,10 +53,38 @@
         <a href="#" class="font-monospace text-decoration-none">Jeux XBOX Serie X</a>
         <a href="#" class="font-monospace text-decoration-none">Jeux Nintindo Switch</a>
     </div> 
-    
-    <div class="">
-        <p style="text-align: center ;"><img class="background" src="assets/images/backgrounds/Bg.jpg" alt="background" width="95%" style="border-radius: 1%;"></p>
+    <div class="vw-100 row d-flex justify-content-center">
+        <div class="col-lg-4 col-md-6 col-sm-10 d-flex flex-column text-center">
+            <div class="mt-5 mb-4">
+                <h2>Rejoinez-nous</h2>
+            </div>
+
+            <form action="" method="post">
+                <div class="mb-3 text-start">
+                    <label class="col-form-label fw-light">Nom d'utilisateur*</label>
+                    <input class="form-control" type="text" placeholder="nom d'utilisateur" required>
+                </div>
+                <div class="mb-3 text-start">
+                    <label class="col-form-label fw-light">Email*</label>
+                    <input class="form-control" type="email" placeholder="mail@website.com" required>
+                </div>
+                <div class="mb-5 text-start">
+                    <label class="col-form-label fw-light">Mot de passe*</label>
+                    <input class="form-control" type="password" placeholder="mot de passe" required>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="sign-up-btn rounded-pill border-0 py-3">Inscrivez-vous</button>
+                </div>
+                <div class="lien mb-5">
+                    Vous avez déjà un compte ?
+                    <a href="login.php" class="text-decoration-none">Connectez-vous</a>
+                </div>
+                <div class="msg-condition mb-3">
+                    En cliquant sur <i>'Inscription'</i>, vous acceptez nos <a href="#">conditions générales 
+                    d'utilisation</a> et notre <a href="#">politique de confidentialité</a> .
+                </div>
+            </form>
+
+        </div>
     </div>
-    
 </body>
-</html>
