@@ -5,7 +5,7 @@ $user           ="root";
 $password       ="";
 $database_name  ="origingamer";
 
-$connect    =mysqli_connect($server_name,$user,$password,$database_name);
+$connect        = mysqli_connect($server_name,$user,$password,$database_name);
 if(!$connect){
     die('Erreur :' .mysqli_connect_error());
 }

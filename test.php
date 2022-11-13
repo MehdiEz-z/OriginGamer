@@ -7,7 +7,7 @@ include('head.php');
 <body>
     <div class="container min-vh-100 d-flex align-items-center justify-content-center bg-white pb-5">
         <div class="content text-center w-50">
-            <h3>salut, <span class="text-white rounded-3 px-3" style="background: rgba(177,79,252,1);">admin</span></h3>
+            <h3 class="pb-3">salut, <span class="text-white rounded-3 px-3" style="background: rgba(177,79,252,1);">admin</span></h3>
             <h1>BIENVENU</h1>
             <p class="py-2 fs-4">c'est votre page admin</p>
             <p class="pb-2 fw-bold">votre email : <span class="text-danger"></span></p>
