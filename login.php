@@ -5,10 +5,11 @@
     include('navbar.php');
 ?>
 
-    <div class="vw-100 row d-flex justify-content-center">
+    <div class="vw-100 row d-flex justify-content-center mt-5">
+        
         <div class="col-lg-4 col-md-6 col-sm-10 d-flex flex-column text-center">
             <div class="mt-5 mb-4">
-                <h2>Connectez-vous</h2>
+                <h2>CONNECTEZ-VOUS</h2>
             </div>
             <div class="lien mb-5">
                 Vous n'avez pas encore de compte ?
@@ -26,8 +27,10 @@
                 <a href="#" class="text-decoration-none">Mot de passe oublié ?</a>					
             </div>
             <div class="mb-3">
-                <button type="submit" class="sign-up-btn rounded-pill border-0 py-3">Connectez-vous</button>
+                <input type="submit" value="Connectez-vous" class="login-btn rounded-pill border-0 py-3">
             </div>
+            
         </div>
     </div>
 </body>
+</html>

@@ -1,7 +1,7 @@
 <body>
 
-    <div class="d-flex align-items-center justify-content-between px-5 py-4 mb-5">
-
+    <div class="d-flex align-items-center justify-content-between px-5 py-4">
+        
         <div>
             <a href="accueil.php"><img class ="logo" src="assets/images/logos/YC-gamer 1.png" alt="logo" width="200"></a>
         </div>

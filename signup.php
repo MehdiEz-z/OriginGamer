@@ -3,12 +3,13 @@
     $Title='SignUp | Origin Gamer';
     include('head.php');
     include('navbar.php');
+
 ?>
 
-    <div class="vw-100 row d-flex justify-content-center">
+    <div class="vw-100 row d-flex justify-content-center mt-5">
         <div class="col-lg-4 col-md-6 col-sm-10 d-flex flex-column text-center">
             <div class="mt-5 mb-4">
-                <h2>Rejoinez-nous</h2>
+                <h2>REJOINEZ-NOUS</h2>
             </div>
 
             <form action="" method="post">
@@ -25,7 +26,7 @@
                     <input class="form-control" type="password" placeholder="mot de passe" required>
                 </div>
                 <div class="mb-3">
-                    <button type="submit" class="sign-up-btn rounded-pill border-0 py-3">Inscrivez-vous</button>
+                    <input type="submit" value="Inscrivez-vous" class="sign-up-btn rounded-pill border-0 py-3">
                 </div>
                 <div class="lien mb-5">
                     Vous avez déjà un compte ?
@@ -40,3 +41,4 @@
         </div>
     </div>
 </body>
+</html>
