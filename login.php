@@ -22,11 +22,10 @@
         }
     };
 ?>
-?>
 
-    <div class="vw-100 row d-flex justify-content-center mt-5">
+    <div class="vw-100 row d-flex justify-content-center mt-5 ms-1">
         
-        <div class="col-lg-4 col-md-6 col-sm-10 d-flex flex-column text-center">
+        <div class="col-lg-4 col-md-6 d-flex flex-column text-center">
             <div class="mt-5 mb-5">
                 <h2>CONNECTEZ-VOUS</h2>
             </div>

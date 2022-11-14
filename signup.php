@@ -13,7 +13,7 @@
         $password   = md5($_POST['password']);
         $cpassword  = md5($_POST['cpassword']);
 
-        $requete    = "SELECT * FROM user_infos WHERE email = '$email' && password = '$password' && username = '$username' ";
+        $requete    = "SELECT * FROM user_infos WHERE email = '$email' ";
         $query      = mysqli_query($connect, $requete);
 
         if(mysqli_num_rows($query) > 0){
@@ -31,7 +31,7 @@
     };
 ?>
 
-    <div class="vw-100 row d-flex justify-content-center mt-5">
+    <div class="w-100 row d-flex justify-content-center mt-5 ms-1">
         <div class="col-lg-4 col-md-6 col-sm-10 d-flex flex-column text-center">
             <div class="mt-5 mb-4">
                 <h2>REJOINEZ-NOUS</h2>

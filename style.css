@@ -1,8 +1,9 @@
 *{
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+}
+.logo-nav{
+    width: 200px;
 }
 .lien a{
     color: black;
@@ -12,16 +13,21 @@
 .lien a:hover{
     color: #824af8;
 }
-.liens a{
+.scrollmenu{
+    overflow: auto;
+    white-space: nowrap;
+}
+.scrollmenu a{
     color: white;
     font-weight: 500;
     font-size: medium;
+    display: inline-block;
 }
-.liens a:hover{
+.scrollmenu a:hover{
     color: #824af8;
 }
 .login-btn,.sign-up-btn{
-    background: linear-gradient(90deg, rgba(177,79,252,1) 0%, rgba(130,74,248,1) 100%);
+    background: rgba(175,79,252,1);
     width: 100%;
     color: white;
     font-weight: 400;
@@ -37,4 +43,20 @@
 }
 .msg-condition a:hover{
     color: #824af8;
+}
+@media screen and (max-width: 1190px) {
+    .lien a{
+        font-size: medium;
+    }
+}
+@media screen and (max-width: 1120px) {
+    .lien a{
+        font-size: small;
+    }
+    .logo-nav{
+        width: 150px;
+    }
+    .scrollmenu a{
+        font-size: small;
+    }
 }
