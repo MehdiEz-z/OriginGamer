@@ -17,7 +17,7 @@ if(!isset($_SESSION['email'])){
             <h1>BIENVENU</h1>
             <p class="py-2 fs-4">c'est votre page admin</p>
             <p class="pb-2 fw-bold">votre email : <span class="text-danger"><?php echo $_SESSION['email'] ?></span></p>
-            <a href="login.php" class="logout text-decoration-none d-inline-block mt-2 text-white rounded-3 py-2 px-4" style="background: linear-gradient(90deg, rgba(177,79,252,1) 0%, rgba(130,74,248,1) 100%);">Déconnexion</a>
+            <a href="logout.php" class="logout text-decoration-none d-inline-block mt-2 text-white rounded-3 py-2 px-4" style="background: linear-gradient(90deg, rgba(177,79,252,1) 0%, rgba(130,74,248,1) 100%);">Déconnexion</a>
         </div>
     </div>
 </body>
