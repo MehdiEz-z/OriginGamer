@@ -1,12 +1,10 @@
 <?php
-include('connexion.php');
 $Title='Dashboard | Origin Gamer';
-include('head.php');
+include('header.php');
 
-session_start();
 
 if(!isset($_SESSION['email'])){
-    header('location:test.php');
+    header('location:login.php');
 }
 ?>
 

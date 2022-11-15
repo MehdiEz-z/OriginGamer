@@ -1,10 +1,7 @@
 <?php
-    include('connexion.php');
     $Title='SignUp | Origin Gamer';
-    include('head.php');
+    include('header.php');
     include('navbar.php');
-
-    session_start();
 
     if(isset($_POST['signup'])){
 

@@ -1,10 +1,8 @@
 <?php
-    include('connexion.php');
-    $Title='Login | Origin Gamer';
-    include('head.php');
-    include('navbar.php'); 
 
-    session_start();
+    $Title='Login | Origin Gamer';
+    include('header.php');
+    include('navbar.php');
 
     if(isset($_POST['login'])){
 
