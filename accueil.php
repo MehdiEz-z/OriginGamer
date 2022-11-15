@@ -5,7 +5,7 @@
     include('navbar.php');
 ?>
 
-    <div class="scrollmenu d-flex justify-content-between bg-black text-nowrap overflow-auto px-2 py-2 mb-3">
+    <div class="scrollmenu d-flex justify-content-between bg-black text-nowrap overflow-auto py-2 my-3">
         <a href="#" class="font-monospace text-decoration-none pe-4 ps-4">Jeux Pc</a>
         <a href="#" class="font-monospace text-decoration-none pe-4">Jeux Android</a>
         <a href="#" class="font-monospace text-decoration-none pe-4">Jeux IOS</a>
@@ -20,6 +20,7 @@
     </div>
     
 
+    
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     
 </body>
