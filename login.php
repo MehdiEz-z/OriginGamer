@@ -7,17 +7,23 @@
     if(isset($_POST['login'])){
 
         $email      = mysqli_real_escape_string($connect, $_POST['email']);
-        $password   = md5($_POST['password']);
+        $password   = $_POST['password'];
 
-        $requete    = "SELECT * FROM user_infos WHERE email = '$email' && password = '$password' ";
+        $requete    = "SELECT * FROM user_infos WHERE email = '$email'";
         $query      = mysqli_query($connect, $requete);
 
         if(mysqli_num_rows($query) > 0){
-            $_SESSION['email'] = $email;
-            header('location:test.php');
-        }else{
-            $error[] = 'Email ou mot de passe incorect'; 
-        }
+            
+            $result=mysqli_fetch_assoc($query);
+            $password_verif = password_verify($password,$result['password']); 
+        
+            if($password_verif == $password){
+                header('location:test.php');
+            }else{
+                $error[] = 'Email ou mot de passe incorect';    
+            }
+        }else 
+        $error[] = 'Email ou mot de passe incorect';    
     };
 ?>
 

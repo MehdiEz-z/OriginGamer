@@ -7,8 +7,14 @@
 
         $username   = mysqli_real_escape_string($connect, $_POST['username']);
         $email      = mysqli_real_escape_string($connect, $_POST['email']);
-        $password   = md5($_POST['password']);
-        $cpassword  = md5($_POST['cpassword']);
+        $Vassword   = $_POST['password'];
+        $cpassword  = $_POST['cpassword'];
+        
+        if($Vassword   != $cpassword){
+            $error[]  = 'Les mots de passe ne sont pas identiques';
+        }else{
+            $password = password_hash($Vassword, PASSWORD_BCRYPT);
+        }
 
         $requete    = "SELECT * FROM user_infos WHERE email = '$email' ";
         $query      = mysqli_query($connect, $requete);
@@ -16,16 +22,12 @@
         if(mysqli_num_rows($query) > 0){
             $error[] = 'Cet utilisateur exist deja'; 
         }else{
-            if($password   != $cpassword){
-                $error[]   = 'Les mots de passe ne sont pas identiques';
-            }else{
-                $inserer    = "INSERT INTO user_infos (`username`,`email`,`password`) 
+                $inserer   = "INSERT INTO user_infos (`username`,`email`,`password`) 
                     VALUE ('$username','$email ','$password')" ;
                 mysqli_query($connect, $inserer);
                 header('location:login.php');
-            }
         }
-    };
+    }
 ?>
 
     <div class="w-100 row d-flex justify-content-center mt-5 ms-1">
