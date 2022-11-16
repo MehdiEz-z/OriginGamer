@@ -6,24 +6,25 @@
 
     if(isset($_POST['login'])){
 
-        $email      = mysqli_real_escape_string($connect, $_POST['email']);
+        $email      = mysqli_real_escape_string($connect, strtolower(($_POST['email'])));
         $password   = $_POST['password'];
 
-        $requete    = "SELECT * FROM user_infos WHERE email = '$email'";
+        $requete    = "SELECT * FROM user_infos WHERE email = '$email' ";
         $query      = mysqli_query($connect, $requete);
 
         if(mysqli_num_rows($query) > 0){
-            
+            $_SESSION['email'] = $email;
+
             $result=mysqli_fetch_assoc($query);
             $password_verif = password_verify($password,$result['password']); 
         
             if($password_verif == $password){
                 header('location:test.php');
             }else{
-                $error[] = 'Email ou mot de passe incorect';    
+                $error[] = 'Mot de passe incorect';    
             }
         }else 
-        $error[] = 'Email ou mot de passe incorect';    
+        $error[] = 'Email incorect';    
     };
 ?>
 
@@ -36,17 +37,17 @@
             <?php
             if(isset($error)){
                 foreach($error as $error){
-                    echo '<span class="d-block p-2 rounded-2 text-white mb-4" style="background: rgba(177,79,252,1);">'.$error.'</span>';
+                    echo '<span class="d-block py-3 px-2 text-danger border border-danger mb-4" style="background: white;">'.$error.'</span>';
                 };
             };  
             ?>
         <form action="" method="post">  
             <div class="mb-3 text-start">
-                <label class="col-form-label fw-light">Email*</label>
+                <label class="col-form-label fw-medium">Email*</label>
                 <input class="form-control" name="email" type="email" placeholder="mail@website.com" required>
             </div>
             <div class="mb-4 text-start">
-                <label class="col-form-label fw-light">Mot de passe*</label>
+                <label class="col-form-label fw-medium">Mot de passe*</label>
                 <input class="form-control" name="password" type="password" placeholder="mot de passe" required>
             </div>
             <div class="lien mb-4 text-end">
