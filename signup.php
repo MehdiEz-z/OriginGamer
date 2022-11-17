@@ -7,27 +7,22 @@
 
         $username           = mysqli_real_escape_string($connect, $_POST['username']);
         $email              = mysqli_real_escape_string($connect, strtolower(($_POST['email'])));
-        $init_password      = $_POST['password'];
-        $confirm_password   = $_POST['cpassword'];
-        
-        if($init_password   != $confirm_password){
-            $error[]  = 'Les mots de passe ne sont pas identiques';
-        }else{
-            $password = password_hash($init_password, PASSWORD_BCRYPT);
-            $requete    = "SELECT * FROM user_infos WHERE email = '$email'";
-            $query      = mysqli_query($connect, $requete);
-                if(mysqli_num_rows($query) > 0){
-                    $error[] = 'Cet utilisateur exist deja'; 
-                }else{
-                        $inserer   = "INSERT INTO user_infos (`username`,`email`,`password`) 
-                            VALUE ('$username','$email ','$password')" ;
-                        mysqli_query($connect, $inserer);
-                        header('location:login.php');
-                }
-        }
+        $password           = password_hash($_POST['password'],PASSWORD_BCRYPT) ;
+        $cpassword          = $_POST['cpassword'];
+ 
+        $requete    = "SELECT * FROM user_infos WHERE email = '$email'";
+        $query      = mysqli_query($connect, $requete);
 
-        
-    }
+            if(mysqli_num_rows($query) > 0){
+                $error[] = 'Cet utilisateur exist deja'; 
+            }else{
+                $inserer   = "INSERT INTO user_infos (`username`,`email`,`password`) 
+                    VALUE ('$username','$email ','$password')";
+
+                mysqli_query($connect, $inserer);
+                header('location:login.php');
+            }       
+}
 ?>
 
     <div class="w-100 row d-flex justify-content-center mt-5 ms-1">
@@ -38,27 +33,27 @@
             <?php
             if(isset($error)){
                 foreach($error as $error){
-                    echo '<span class="d-block py-3 px-2 text-danger border border-danger mb-4" style="background: white;">'.$error.'</span>';
+                    echo '<span class="d-block mb-3" style="color: #B94A48;">'.$error.'</span>';
                 };
             };  
             ?>
 
-            <form action="" method="post">
+            <form id="form" action="" method="post" data-parsley-validate>
                 <div class="mb-3 text-start">
                     <label class="col-form-label fw-medium">Nom d'utilisateur*</label>
-                    <input class="form-control" name="username" type="text" placeholder="nom d'utilisateur" required>
+                    <input class="form-control" name="username" type="text" placeholder="nom d'utilisateur" data-parsley-minlength="5" required>
                 </div>
                 <div class="mb-3 text-start">
                     <label class="col-form-label fw-medium">Email*</label>
-                    <input class="form-control" name="email" type="email" placeholder="mail@website.com" required>
+                    <input class="form-control" name="email" type="email" placeholder="mail@website.com" data-parsley-type="email" required>
                 </div>
                 <div class="mb-3 text-start">
                     <label class="col-form-label fw-medium">Mot de passe*</label>
-                    <input class="form-control" name="password" type="password" placeholder="mot de passe" required>
+                    <input id="pass" class="form-control" name="password" type="password" placeholder="mot de passe" data-parsley-minlength="8" required>
                 </div>
                 <div class="mb-5 text-start">
                     <label class="col-form-label fw-medium">Confirmez votre mot de passe*</label>
-                    <input class="form-control" name="cpassword" type="password" placeholder="confirmez votre mot de passe" required>
+                    <input class="form-control" name="cpassword" type="password" placeholder="confirmez votre mot de passe" data-parsley-equalto="#pass" required>
                 </div>
                 <div class="mb-3">
                     <input type="submit" name="signup" value="Inscrivez-vous" class="sign-up-btn rounded-pill border-0 py-3">
@@ -75,5 +70,6 @@
 
         </div>
     </div>
+    <script src="main.js"></script>
 </body>
 </html>

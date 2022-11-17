@@ -44,6 +44,14 @@
 .msg-condition a:hover{
     color: #824af8;
 }
+#user-img{
+    width: 30px;
+    height: 30px;
+    margin-top: -5px;
+    margin-bottom: -5px;
+    border-radius: 30px;
+    margin-right: 10px;
+}
 @media screen and (max-width: 1190px) {
     .lien a{
         font-size: medium;

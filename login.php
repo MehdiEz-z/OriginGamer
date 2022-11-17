@@ -16,9 +16,10 @@
             $_SESSION['email'] = $email;
 
             $result=mysqli_fetch_assoc($query);
-            $password_verif = password_verify($password,$result['password']); 
+            $password_v = password_verify($password,$result['password']); 
         
-            if($password_verif == $password){
+            if($password_v == $password){
+                $_SESSION['username'] = $result['username'];
                 header('location:test.php');
             }else{
                 $error[] = 'Mot de passe incorect';    
@@ -37,7 +38,7 @@
             <?php
             if(isset($error)){
                 foreach($error as $error){
-                    echo '<span class="d-block py-3 px-2 text-danger border border-danger mb-4" style="background: white;">'.$error.'</span>';
+                    echo '<span class="d-block mb-4" style="color: #B94A48;">'.$error.'</span>';
                 };
             };  
             ?>

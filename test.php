@@ -9,14 +9,37 @@ if(!isset($_SESSION['email'])){
 ?>
 
 <body>
-    <div class="container min-vh-100 d-flex align-items-center justify-content-center bg-white pb-5">
-        <div class="content text-center w-50">
-            <h3 class="pb-3">salut, <span class="text-white rounded-3 px-3" style="background: rgba(177,79,252,1);">admin</span></h3>
-            <h1>BIENVENU</h1>
-            <p class="py-2 fs-4">c'est votre page admin</p>
-            <p class="pb-2 fw-bold">votre email : <span class="text-danger"><?php echo $_SESSION['email'] ?></span></p>
-            <a href="logout.php" class="logout text-decoration-none d-inline-block mt-2 text-white rounded-3 py-2 px-4" style="background: linear-gradient(90deg, rgba(177,79,252,1) 0%, rgba(130,74,248,1) 100%);">Déconnexion</a>
+    <div class="navbar navbar-white bg-white px-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="accueil.php"><img class ="me-3" src="assets/images/logos/YC-gamer 1.png" alt="logo" width="120"></a>
+            <div class="navbar-item navbar-user dropdown">
+                <a href="#" class="navbar-link dropdown-toggle d-flex align-items-center text-decoration-none text-black" data-bs-toggle="dropdown">
+                    <img id="user-img"src="assets/images/user-2.jpg" alt="" /> 
+                    <span>
+                        <span class="d-none d-md-inline"><?php echo $_SESSION['username']?></span>
+                    </span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end me-1">
+                    <a href="#" class="dropdown-item">Edit Profile</a>
+                    <a href="#" class="dropdown-item">Setting</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="logout.php" class="dropdown-item">Log Out</a>
+                </div>
+            </div>
         </div>
+        
+    </div>
+
+    <div class="d-flex flex-column p-3 text-white bg-white position-fixed shadow h-100" style="width : 250px;">
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li>
+                <a href="#" class="nav-link text-black"><i class="fa-solid fa-chart-line me-3"></i>Dashboard</a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-black"><i class="fa-solid fa-gamepad me-3"></i></i>Jeux</a>  
+            </li>
+        </ul>
+        <hr>
     </div>
 </body>
 </html>
