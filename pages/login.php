@@ -1,8 +1,8 @@
 <?php
 
     $Title='Login | Origin Gamer';
-    include('header.php');
-    include('navbar.php');
+    include('../includes/header.php');
+    include('../includes/navbar.php');
 
     if(isset($_POST['login'])){
 

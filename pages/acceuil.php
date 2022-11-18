@@ -1,7 +1,7 @@
 <?php  
     $Title='YouCode | Origin Gamer';
-    include('header.php');
-    include('navbar.php');
+    include('../includes/header.php');
+    include('../includes/navbar.php');
 ?>
 
     <div class="scrollmenu d-flex justify-content-between bg-black text-nowrap overflow-auto py-2 mb-3">
@@ -15,7 +15,7 @@
     </div> 
     
     <div class="">
-        <p style="text-align: center ;"><img class="background" src="assets/images/backgrounds/Bg.jpg" alt="background" width="95%" style="border-radius: 1%;"></p>
+        <p style="text-align: center ;"><img class="background" src="../assets/images/backgrounds/Bg.jpg" alt="background" width="95%" style="border-radius: 1%;"></p>
     </div>
     
 </body>

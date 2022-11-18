@@ -1,7 +1,7 @@
 <?php
     $Title='SignUp | Origin Gamer';
-    include('header.php');
-    include('navbar.php');
+    include('../includes/header.php');
+    include('../includes/navbar.php');
 
     if(isset($_POST['signup'])){
 
@@ -70,6 +70,6 @@
 
         </div>
     </div>
-    <script src="main.js"></script>
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-white bg-white p-3">
     <div class="container-fluid">
-        <a class="navbar-brand" href="accueil.php"><img class ="logo-nav me-3" src="assets/images/logos/YC-gamer 1.png" alt="logo" width="200"></a>
+        <a class="navbar-brand" href="acceuil.php"><img class ="logo-nav me-3" src="../assets/images/logos/YC-gamer 1.png" alt="logo" width="200"></a>
         <div class="d-flex d-none d-lg-flex">
             <input type="text" class="form-control border border-0" placeholder="Trouver des jeux"/>
             <button class="btn btn-search"><i class="fa fa-search"></i></button>

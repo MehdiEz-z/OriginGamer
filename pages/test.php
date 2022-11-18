@@ -1,6 +1,6 @@
 <?php
 $Title='Dashboard | Origin Gamer';
-include('header.php');
+include('../includes/header.php');
 
 if(!isset($_SESSION['email'])){
     header('location:login.php');
@@ -10,12 +10,12 @@ if(!isset($_SESSION['email'])){
 <body>
     <div class="navbar navbar-white bg-white px-3">
         <div class="container-fluid">
-            <a class="navbar-brand" href="accueil.php"><img class ="me-3" src="assets/images/logos/YC-gamer 1.png" alt="logo" width="120"></a>
+            <a class="navbar-brand" href="accueil.php"><img class ="me-3" src="../assets/images/logos/YC-gamer 1.png" alt="logo" width="120"></a>
             <div class="navbar-item navbar-user dropdown">
                 <a href="#" class="navbar-link dropdown-toggle d-flex align-items-center text-decoration-none text-black" data-bs-toggle="dropdown">
-                    <img id="user-img"src="assets/images/user-2.jpg" alt="" /> 
+                    <img id="user-img"src="../assets/images/user-2.jpg" alt="" /> 
                     <span>
-                        <span class="d-none d-md-inline"><?php echo $_SESSION['username'] ?></span>
+                        <span class="d-none d-md-inline"><?php echo $_SESSION['username']; ?></span>
                     </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end me-1">
