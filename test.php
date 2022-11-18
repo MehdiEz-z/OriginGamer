@@ -2,7 +2,6 @@
 $Title='Dashboard | Origin Gamer';
 include('header.php');
 
-
 if(!isset($_SESSION['email'])){
     header('location:login.php');
 }
@@ -16,7 +15,7 @@ if(!isset($_SESSION['email'])){
                 <a href="#" class="navbar-link dropdown-toggle d-flex align-items-center text-decoration-none text-black" data-bs-toggle="dropdown">
                     <img id="user-img"src="assets/images/user-2.jpg" alt="" /> 
                     <span>
-                        <span class="d-none d-md-inline"><?php echo $_SESSION['username']?></span>
+                        <span class="d-none d-md-inline"><?php echo $_SESSION['username'] ?></span>
                     </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end me-1">
