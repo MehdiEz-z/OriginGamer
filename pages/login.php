@@ -20,7 +20,7 @@
         
             if($password_v == $password){
                 $_SESSION['username'] = $result['username'];
-                header('location:test.php');
+                header('location:../dashboard/dashboard.php');
             }else{
                 $error[] = 'Mot de passe incorect';    
             }
