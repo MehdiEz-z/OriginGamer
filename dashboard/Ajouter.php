@@ -23,7 +23,7 @@ if(isset($_POST['ajouter'])){
     $query          =mysqli_query($connect,$requete);
     
     if($query){
-        $_SESSION['message'] = "Jeux ajouté avec succé !";      
+        $_SESSION['message'] = "Jeu ajouté avec succé !";      
     }
     header('location:dashboard.php');
 }

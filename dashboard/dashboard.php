@@ -5,8 +5,18 @@ include('../includes/header.php');
 if(!isset($_SESSION['email'])){
     header('location:../pages/login.php');
 }
-include('../includes/sidebar.php')
+include('../includes/sidebar.php');
 
+if(isset($_GET['Sid'])){
+
+    $id         = $_GET['Sid'];
+    $requete    ="DELETE FROM games_info WHERE id='$id'";
+    $query      =mysqli_query($connect,$requete);
+    if($query){
+        $_SESSION['message'] = "Jeu supprimé avec succé !";
+    }
+
+}   
 ?>
 
         <div class="main-content">
@@ -54,7 +64,7 @@ include('../includes/sidebar.php')
                                             <h6 class="card-price mb-2">'.$rows['price'].'Dhs</h6>
                                             <h6 class="card-date mb-2">'.$rows['date'].'</h6>
                                             <a href="dashboard.php?id='.$rows['id'].'" class="btn btn-warning">Modifier</a>
-                                            <a href="dashboard.php?id='.$rows['id'].'"><i class="delete fa-solid fa-xmark text-danger"></i></a>
+                                            <a href="dashboard.php?Sid='.$rows['id'].'"><i class="delete fa-solid fa-xmark text-danger"></i></a>
                                         </div>
                                     </div>';                         
                             }
@@ -90,7 +100,7 @@ include('../includes/sidebar.php')
                                             <h6 class="card-price mb-2">'.$rows['price'].'Dhs</h6>
                                             <h6 class="card-date mb-2">'.$rows['date'].'</h6>
                                             <a href="dashboard.php?id='.$rows['id'].'" class="btn btn-warning">Modifier</a>
-                                            <a href="dashboard.php?id='.$rows['id'].'"><i class="delete fa-solid fa-xmark text-danger"></i></a>
+                                            <a href="dashboard.php?Sid='.$rows['id'].'"><i class="delete fa-solid fa-xmark text-danger"></i></a>
                                         </div>
                                     </div>';                         
                             }
@@ -125,7 +135,7 @@ include('../includes/sidebar.php')
                                             <h6 class="card-price mb-2">'.$rows['price'].'Dhs</h6>
                                             <h6 class="card-date mb-2">'.$rows['date'].'</h6>
                                             <a href="dashboard.php?id='.$rows['id'].'" class="btn btn-warning">Modifier</a>
-                                            <a href="dashboard.php?id='.$rows['id'].'"><i class="delete fa-solid fa-xmark text-danger"></i></a>
+                                            <a href="dashboard.php?Sid='.$rows['id'].'"><i class="delete fa-solid fa-xmark text-danger"></i></a>
                                         </div>
                                     </div>';                         
                             }
@@ -160,14 +170,13 @@ include('../includes/sidebar.php')
                                             <h6 class="card-price mb-2">'.$rows['price'].'Dhs</h6>
                                             <h6 class="card-date mb-2">'.$rows['date'].'</h6>
                                             <a href="dashboard.php?id='.$rows['id'].'" class="btn btn-warning">Modifier</a>
-                                            <a href="dashboard.php?id='.$rows['id'].'"><i class="delete fa-solid fa-xmark text-danger"></i></a>
+                                            <a href="dashboard.php?Sid='.$rows['id'].'"><i class="delete fa-solid fa-xmark text-danger"></i></a>
                                         </div>
                                     </div>';                         
                             }
                         ?>
                         </div>
-                    </div>
-                  
+                    </div>                 
                 </div>  
             </div>
         </div>
