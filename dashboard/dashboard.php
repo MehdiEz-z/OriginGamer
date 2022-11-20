@@ -6,14 +6,27 @@ if(!isset($_SESSION['email'])){
     header('location:../pages/login.php');
 }
 include('../includes/sidebar.php')
+
 ?>
 
         <div class="main-content">
             <div class="overview">
+                
                 <div class="title">
                     <h4>Tableau de bord</h4>
                 </div>
+                <?php if (isset($_SESSION['message'])): ?>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Génial!</strong>
+                        <?php 
+                            echo $_SESSION['message']; 
+                            unset($_SESSION['message']);	
+                        ?>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></span>
+                    </div>
+                <?php endif ?>
                 <div class="cards">
+
                     <div class="cards-pc">
                         <div class="card-dash card-1">
                             <div class="card-content">
@@ -26,43 +39,14 @@ include('../includes/sidebar.php')
                         </div>
                         <div class="cards-games">
                             <div class="card-jeux">
-                                <img src="../assets/images/jeux/game 1.jpg" class="card-img-top" alt="...">
+                                <img class="card-img-top rounded-top" src="../assets/images/jeux/game 1.jpg" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">PUBG</h5>
-                                    <p class="card-text">Buttelfield</p>
-                                    <a href="#" class="btn btn-primary">Modifier</a>
-                                </div>
-                            </div>
-                            <div class="card-jeux">
-                                <img src="../assets/images/jeux/game 1.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">PUBG</h5>
-                                    <p class="card-text">Buttelfield</p>
-                                    <a href="#" class="btn btn-primary">Modifier</a>
-                                </div>
-                            </div>
-                            <div class="card-jeux">
-                                <img src="../assets/images/jeux/game 1.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">PUBG</h5>
-                                    <p class="card-text">Buttelfield</p>
-                                    <a href="#" class="btn btn-primary">Modifier</a>
-                                </div>
-                            </div>
-                            <div class="card-jeux">
-                                <img src="../assets/images/jeux/game 1.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">PUBG</h5>
-                                    <p class="card-text">Buttelfield</p>
-                                    <a href="#" class="btn btn-primary">Modifier</a>
-                                </div>
-                            </div>
-                            <div class="card-jeux">
-                                <img src="../assets/images/jeux/game 2.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">PUBG</h5>
-                                    <p class="card-text">Buttelfield</p>
-                                    <a href="#" class="btn btn-primary">Modifier</a>
+                                    <h5 class="card-title mb-2">PUBG</h5>
+                                    <p class="card-text text-truncate mb-1">Buttelfield</p>
+                                    <h6 class="card-price mb-2">140.00Dhs</h6>
+                                    <h6 class="card-date mb-2">20-11-2022</h6>
+                                    <a href="#" class="btn btn-warning">Modifier</a>
+                                    <a href="#"><i class="delete fa-solid fa-xmark text-danger"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -81,46 +65,16 @@ include('../includes/sidebar.php')
                         </div> 
                         <div class="cards-games">
                             <div class="card-jeux">
-                                <img src="../assets/images/jeux/game 1.jpg" class="card-img-top" alt="...">
+                                <img class="card-img-top rounded-top" src="../assets/images/jeux/game 1.jpg" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">PUBG</h5>
-                                    <p class="card-text">Buttelfield</p>
-                                    <a href="#" class="btn btn-primary">Modifier</a>
-                                </div>
-                            </div>
-                            <div class="card-jeux">
-                                <img src="../assets/images/jeux/game 2.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">PUBG</h5>
-                                    <p class="card-text">Buttelfield</p>
-                                    <a href="#" class="btn btn-primary">Modifier</a>
-                                </div>
-                            </div>
-                            <div class="card-jeux">
-                                <img src="../assets/images/jeux/game 2.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">PUBG</h5>
-                                    <p class="card-text">Buttelfield</p>
-                                    <a href="#" class="btn btn-primary">Modifier</a>
-                                </div>
-                            </div>
-                            <div class="card-jeux">
-                                <img src="../assets/images/jeux/game 2.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">PUBG</h5>
-                                    <p class="card-text">Buttelfield</p>
+                                    <h5 class="card-title mb-2">PUBG</h5>
+                                    <p class="card-text mb-1">Buttelfield</p>
+                                    <h6 class="card-price mb-3">140.00Dhs</h6>
+                                    <h6 class="card-date mb-2">20-11-2022</h6>
                                     <a href="#" class="btn btn-warning">Modifier</a>
                                     <a href="#"><i class="delete fa-solid fa-xmark text-danger"></i></a>
                                 </div>
-                            </div>
-                            <div class="card-jeux">
-                                <img src="../assets/images/jeux/game 1.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">PUBG</h5>
-                                    <p class="card-text">Buttelfield</p>
-                                    <a href="#" class="btn btn-primary">Modifier</a>
-                                </div>
-                            </div>  
+                            </div>   
                         </div>
                     </div>
                     
@@ -136,12 +90,20 @@ include('../includes/sidebar.php')
                             </div>
                         </div> 
                         <div class="cards-games">
-
-
+                            <div class="card-jeux">
+                                <img class="card-img-top rounded-top" src="../assets/images/jeux/game 1.jpg" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-2">PUBG</h5>
+                                    <p class="card-text mb-1">Buttelfield</p>
+                                    <h6 class="card-price mb-3">140.00Dhs</h6>
+                                    <h6 class="card-date mb-2">20-11-2022</h6>
+                                    <a href="#" class="btn btn-warning">Modifier</a>
+                                    <a href="#"><i class="delete fa-solid fa-xmark text-danger"></i></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-
 
                     <div class="card-xbox">
                         <div class="card-dash card-4">
@@ -154,8 +116,17 @@ include('../includes/sidebar.php')
                             </div>
                         </div>
                         <div class="cards-games">
-
-
+                            <div class="card-jeux">
+                                <img class="card-img-top rounded-top" src="../assets/images/jeux/game 1.jpg" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-2">PUBG</h5>
+                                    <p class="card-text mb-1">Buttelfield</p>
+                                    <h6 class="card-price mb-3">140.00Dhs</h6>
+                                    <h6 class="card-date mb-2">20-11-2022</h6>
+                                    <a href="#" class="btn btn-warning">Modifier</a>
+                                    <a href="#"><i class="delete fa-solid fa-xmark text-danger"></i></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                   

@@ -42,26 +42,26 @@
                 };
             };  
             ?>
-        <form action="" method="post">  
-            <div class="mb-3 text-start">
-                <label class="col-form-label fw-medium">Email*</label>
-                <input class="form-control" name="email" type="email" placeholder="mail@website.com" required>
-            </div>
-            <div class="mb-4 text-start">
-                <label class="col-form-label fw-medium">Mot de passe*</label>
-                <input class="form-control" name="password" type="password" placeholder="mot de passe" required>
-            </div>
-            <div class="lien mb-4 text-end">
-                <a href="#" class="text-decoration-none">Mot de passe oublié ?</a>					
-            </div>
-            <div class="mb-3">
-                <input type="submit" name="login" value="Connectez-vous" class="login-btn rounded-pill border-0 py-3">
-            </div>
-            <div class="lien mb-5">
-                Vous n'avez pas encore de compte ?
-                <a href="signup.php" class="text-decoration-none">Inscrivez-vous</a>
-            </div>
-        </form>     
+            <form action="" method="post">  
+                <div class="mb-3 text-start">
+                    <label class="col-form-label fw-medium">Email*</label>
+                    <input class="form-control" name="email" type="email" placeholder="mail@website.com" required>
+                </div>
+                <div class="mb-4 text-start">
+                    <label class="col-form-label fw-medium">Mot de passe*</label>
+                    <input class="form-control" name="password" type="password" placeholder="mot de passe" required>
+                </div>
+                <div class="lien mb-4 text-end">
+                    <a href="#" class="text-decoration-none">Mot de passe oublié ?</a>					
+                </div>
+                <div class="mb-3">
+                    <input type="submit" name="login" value="Connectez-vous" class="login-btn rounded-pill border-0 py-3">
+                </div>
+                <div class="lien mb-5">
+                    Vous n'avez pas encore de compte ?
+                    <a href="signup.php" class="text-decoration-none">Inscrivez-vous</a>
+                </div>
+            </form>     
         </div>
     </div>
 </body>
