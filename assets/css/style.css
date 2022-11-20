@@ -275,6 +275,8 @@ li i{
 .card-title{
     font-size: x-large;
     font-weight: 600;
+    text-transform: uppercase;
+    
 }
 .card-text{
     font-weight: 400;

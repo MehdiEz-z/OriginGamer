@@ -38,17 +38,28 @@ include('../includes/sidebar.php')
                             </div>
                         </div>
                         <div class="cards-games">
-                            <div class="card-jeux">
-                                <img class="card-img-top rounded-top" src="../assets/images/jeux/game 1.jpg" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title mb-2">PUBG</h5>
-                                    <p class="card-text text-truncate mb-1">Buttelfield</p>
-                                    <h6 class="card-price mb-2">140.00Dhs</h6>
-                                    <h6 class="card-date mb-2">20-11-2022</h6>
-                                    <a href="#" class="btn btn-warning">Modifier</a>
-                                    <a href="#"><i class="delete fa-solid fa-xmark text-danger"></i></a>
-                                </div>
-                            </div>
+                            
+                        <?php
+                            $requete    ="SELECT * FROM games_info WHERE category_id = 1";
+                            $query      = mysqli_query($connect, $requete);
+        
+                            while($rows = mysqli_fetch_assoc($query)){
+                                
+                                echo'
+                                    <div class="card-jeux">
+                                        <img class="card-img-top rounded-top" src="'.$rows['image'].'" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-2">'.$rows['title'].'</h5>
+                                            <p class="card-text text-truncate mb-1">'.$rows['description'].'</p>
+                                            <h6 class="card-price mb-2">'.$rows['price'].'Dhs</h6>
+                                            <h6 class="card-date mb-2">'.$rows['date'].'</h6>
+                                            <a href="dashboard.php?id='.$rows['id'].'" class="btn btn-warning">Modifier</a>
+                                            <a href="dashboard.php?id='.$rows['id'].'"><i class="delete fa-solid fa-xmark text-danger"></i></a>
+                                        </div>
+                                    </div>';                         
+                            }
+                        ?>
+
                         </div>
                     </div>
                         
@@ -64,17 +75,26 @@ include('../includes/sidebar.php')
                             </div>
                         </div> 
                         <div class="cards-games">
-                            <div class="card-jeux">
-                                <img class="card-img-top rounded-top" src="../assets/images/jeux/game 1.jpg" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title mb-2">PUBG</h5>
-                                    <p class="card-text mb-1">Buttelfield</p>
-                                    <h6 class="card-price mb-3">140.00Dhs</h6>
-                                    <h6 class="card-date mb-2">20-11-2022</h6>
-                                    <a href="#" class="btn btn-warning">Modifier</a>
-                                    <a href="#"><i class="delete fa-solid fa-xmark text-danger"></i></a>
-                                </div>
-                            </div>   
+                        <?php
+                            $requete    ="SELECT * FROM games_info WHERE category_id = 2";
+                            $query      = mysqli_query($connect, $requete);
+        
+                            while($rows = mysqli_fetch_assoc($query)){
+                                
+                                echo'
+                                    <div class="card-jeux">
+                                        <img class="card-img-top rounded-top" src="'.$rows['image'].'" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-2">'.$rows['title'].'</h5>
+                                            <p class="card-text text-truncate mb-1">'.$rows['description'].'</p>
+                                            <h6 class="card-price mb-2">'.$rows['price'].'Dhs</h6>
+                                            <h6 class="card-date mb-2">'.$rows['date'].'</h6>
+                                            <a href="dashboard.php?id='.$rows['id'].'" class="btn btn-warning">Modifier</a>
+                                            <a href="dashboard.php?id='.$rows['id'].'"><i class="delete fa-solid fa-xmark text-danger"></i></a>
+                                        </div>
+                                    </div>';                         
+                            }
+                        ?>  
                         </div>
                     </div>
                     
@@ -90,17 +110,26 @@ include('../includes/sidebar.php')
                             </div>
                         </div> 
                         <div class="cards-games">
-                            <div class="card-jeux">
-                                <img class="card-img-top rounded-top" src="../assets/images/jeux/game 1.jpg" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title mb-2">PUBG</h5>
-                                    <p class="card-text mb-1">Buttelfield</p>
-                                    <h6 class="card-price mb-3">140.00Dhs</h6>
-                                    <h6 class="card-date mb-2">20-11-2022</h6>
-                                    <a href="#" class="btn btn-warning">Modifier</a>
-                                    <a href="#"><i class="delete fa-solid fa-xmark text-danger"></i></a>
-                                </div>
-                            </div>
+                        <?php
+                            $requete    ="SELECT * FROM games_info WHERE category_id = 3";
+                            $query      = mysqli_query($connect, $requete);
+        
+                            while($rows = mysqli_fetch_assoc($query)){
+                                
+                                echo'
+                                    <div class="card-jeux">
+                                        <img class="card-img-top rounded-top" src="'.$rows['image'].'" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-2">'.$rows['title'].'</h5>
+                                            <p class="card-text text-truncate mb-1">'.$rows['description'].'</p>
+                                            <h6 class="card-price mb-2">'.$rows['price'].'Dhs</h6>
+                                            <h6 class="card-date mb-2">'.$rows['date'].'</h6>
+                                            <a href="dashboard.php?id='.$rows['id'].'" class="btn btn-warning">Modifier</a>
+                                            <a href="dashboard.php?id='.$rows['id'].'"><i class="delete fa-solid fa-xmark text-danger"></i></a>
+                                        </div>
+                                    </div>';                         
+                            }
+                        ?>
                         </div>
                     </div>
                     
@@ -116,17 +145,26 @@ include('../includes/sidebar.php')
                             </div>
                         </div>
                         <div class="cards-games">
-                            <div class="card-jeux">
-                                <img class="card-img-top rounded-top" src="../assets/images/jeux/game 1.jpg" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title mb-2">PUBG</h5>
-                                    <p class="card-text mb-1">Buttelfield</p>
-                                    <h6 class="card-price mb-3">140.00Dhs</h6>
-                                    <h6 class="card-date mb-2">20-11-2022</h6>
-                                    <a href="#" class="btn btn-warning">Modifier</a>
-                                    <a href="#"><i class="delete fa-solid fa-xmark text-danger"></i></a>
-                                </div>
-                            </div>
+                        <?php
+                            $requete    ="SELECT * FROM games_info WHERE category_id = 4";
+                            $query      = mysqli_query($connect, $requete);
+        
+                            while($rows = mysqli_fetch_assoc($query)){
+                                
+                                echo'
+                                    <div class="card-jeux">
+                                        <img class="card-img-top rounded-top" src="'.$rows['image'].'" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-2">'.$rows['title'].'</h5>
+                                            <p class="card-text text-truncate mb-1">'.$rows['description'].'</p>
+                                            <h6 class="card-price mb-2">'.$rows['price'].'Dhs</h6>
+                                            <h6 class="card-date mb-2">'.$rows['date'].'</h6>
+                                            <a href="dashboard.php?id='.$rows['id'].'" class="btn btn-warning">Modifier</a>
+                                            <a href="dashboard.php?id='.$rows['id'].'"><i class="delete fa-solid fa-xmark text-danger"></i></a>
+                                        </div>
+                                    </div>';                         
+                            }
+                        ?>
                         </div>
                     </div>
                   
