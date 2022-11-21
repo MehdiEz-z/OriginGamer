@@ -201,8 +201,15 @@ li i{
     overflow-y: scroll;
 }
 .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 30px;
     margin-top: 30px;
+}
+.btn-ajout{
+    background-color: #824af8;
+    padding: 5px 10px;
 }
 .card-dash{
     position: relative;

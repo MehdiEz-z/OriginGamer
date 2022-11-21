@@ -27,10 +27,6 @@
                     <i class="icon fa-brands fa-slack"></i>
                     <span class="nav-item">Tableau de bord</span>
                 </a></li>
-                <li><a href="../dashboard/ajouter.php">
-                    <i class="icon fa-solid fa-square-plus"></i>
-                    <span class="nav-item">Ajouter</span>
-                </a></li>
                 <li><a href="#">
                     <i class="icon fa-solid fa-user"></i>
                     <span class="nav-item">Profile</span>

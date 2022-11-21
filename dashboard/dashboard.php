@@ -7,6 +7,26 @@ if(!isset($_SESSION['email'])){
 }
 include('../includes/sidebar.php');
 
+if(isset($_POST['sauvegarder'])){
+    $titre          =mysqli_real_escape_string($connect,$_POST['game-titre']);
+    $description    =mysqli_real_escape_string($connect,$_POST['game-description']);
+    $prix           =$_POST['game-price']; 
+    $categorie      =$_POST['game-categorie'];
+    $date           =$_POST['game-date'];
+    $image          =$_FILES["game-image"]["name"];
+    $folder         ="imgs-jeux/".$image;
+    move_uploaded_file($_FILES['game-image']['tmp_name'],$folder);
+
+    $requete        ="INSERT INTO games_info (title,description,price,date,category_id,image) 
+                        VALUES ('$titre','$description','$prix','$date','$categorie','$folder')";
+    $query          =mysqli_query($connect,$requete);
+    
+    if($query){
+        header('location:dashboard.php');
+    }   
+    
+}
+
 if(isset($_GET['Sid'])){
 
     $id         = $_GET['Sid'];
@@ -24,8 +44,9 @@ if(isset($_GET['Sid'])){
                 
                 <div class="title">
                     <h4>Tableau de bord</h4>
+                    <a href="#modal-game" data-bs-toggle="modal" name="ajouter-jeux" class="btn-ajout rounded-pill"><i class="fa-solid fa-plus text-white"></i></a>
                 </div>
-                <div class="cards">
+                <div class="cards mt-5">
 
                     <div class="cards-pc">
                         <div class="card-dash card-1">
@@ -46,10 +67,7 @@ if(isset($_GET['Sid'])){
                         </div>
                         <div class="cards-games">
                             
-                        <?php
-                            $requete    ="SELECT * FROM games_info WHERE category_id = 1";
-                            $query      = mysqli_query($connect, $requete);
-        
+                        <?php        
                             while($rows = mysqli_fetch_assoc($query)){
                                 
                                 echo'
@@ -90,9 +108,6 @@ if(isset($_GET['Sid'])){
                         </div> 
                         <div class="cards-games">
                         <?php
-                            $requete    ="SELECT * FROM games_info WHERE category_id = 2";
-                            $query      = mysqli_query($connect, $requete);
-        
                             while($rows = mysqli_fetch_assoc($query)){
                                 
                                 echo'
@@ -132,9 +147,6 @@ if(isset($_GET['Sid'])){
                         </div> 
                         <div class="cards-games">
                         <?php
-                            $requete    ="SELECT * FROM games_info WHERE category_id = 3";
-                            $query      = mysqli_query($connect, $requete);
-        
                             while($rows = mysqli_fetch_assoc($query)){
                                 
                                 echo'
@@ -163,7 +175,7 @@ if(isset($_GET['Sid'])){
                                     $requete    = "SELECT * FROM games_info WHERE category_id = 4 ";
                                     $query      = mysqli_query($connect, $requete);
                                     
-                                    echo mysqli_num_rows($query);                                                           
+                                        echo mysqli_num_rows($query);                                                           
                                 ?> 
                                 </div>
                                 <div class="card-name text-white">Jeux Nintindo</div>
@@ -174,9 +186,6 @@ if(isset($_GET['Sid'])){
                         </div>
                         <div class="cards-games">
                         <?php
-                            $requete    ="SELECT * FROM games_info WHERE category_id = 4";
-                            $query      = mysqli_query($connect, $requete);
-        
                             while($rows = mysqli_fetch_assoc($query)){
                                 
                                 echo'
@@ -199,6 +208,59 @@ if(isset($_GET['Sid'])){
             </div>
         </div>
     </section>
+
+    <div class="modal fade" id="modal-game">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form action="" method="POST" enctype="multipart/form-data">
+					<div class="modal-header">
+						<h5 class="modal-title">Ajouter un jeux</h5>
+						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
+					</div>
+					<div class="modal-body">
+                        <input type="hidden" name="game-id"> 
+                        <div class="mb-2">
+                            <label class="form-label">Titre*</label>
+                            <input class="form-control" name="game-titre" type="text" required>
+                        </div>
+
+                        <div class="mb-2 text-start">
+                            <label class="form-label">Categories*</label>
+                            <select class="form-select" name="game-categorie" required>
+                                <option value="">Please select</option>
+                                <option value="1">Jeux Pc</option>
+                                <option value="2">Jeux PS5</option>
+                                <option value="3">Jeux XBOX</option>
+                                <option value="4">Jeux Nintindo</option>
+                            </select>
+                        </div>
+    
+                        <div class="mb-2">
+                            <label class="col-form-label ">Description*</label>
+                            <textarea class="form-control" name="game-description" rows="1" required></textarea>
+                        </div>
+                        <div class="mb-2">
+                            <label class="col-form-label">Images*</label>
+                            <input class="form-control" name="game-image" type="file">
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Prix*</label>
+                            <input class="form-control" name="game-price" type="number" min="1" max="100000" step="0.01" required>
+                        </div>
+                        <div class="mb-4"> 
+                            <label class="form-label">Date*</label>
+                            <input class="form-control" name="game-date" type="datetime-local" value="" required>
+                        </div>
+						
+					</div>
+					<div class="modal-footer">
+						<a href="#" class="bg-light p-2 rounded-1 border border-0 text-dark" data-bs-dismiss="modal">Annuler</a>
+						<button type="submit" name="sauvegarder" class="bg-success ms-2 p-2 rounded-1 text-white border border-0">Sauvegarder</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 
 </body>
 </html>
