@@ -19,7 +19,7 @@ if(isset($_POST['ajouter'])){
     move_uploaded_file($_FILES['game-image']['tmp_name'],$folder);
 
     $requete        ="INSERT INTO games_info (title,description,price,date,category_id,image) 
-                        VALUES ('$titre','$decription','$prix','$date','$categorie','$folder')";
+                        VALUES ('$titre','$description','$prix','$date','$categorie','$folder')";
     $query          =mysqli_query($connect,$requete);
     
     if($query){
@@ -61,7 +61,7 @@ if(isset($_POST['ajouter'])){
                     </div>
                     <div class="mb-3 text-start">
                         <label class="form-label fw-semibold">Prix*</label>
-                        <input class="form-control" name="game-price" type="number" min="1" max="100000" required>
+                        <input class="form-control" name="game-price" type="number" min="1" max="100000" step="0.01" required>
                     </div>
                     <div class="mb-5 text-start"> 
                         <label class="form-label fw-semibold">Date*</label>

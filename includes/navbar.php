@@ -24,7 +24,7 @@
         </button>
         <div class="offcanvas offcanvas-end text-bg-white" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
             <div class="offcanvas-header">
-            <a href="accueil.php"><img class ="logo-nav me-3" src="assets/images/logos/YC-gamer 1.png" alt="logo" width="100"></a>
+            <a href="accueil.php"><img class ="logo-nav me-3" src="../assets/images/logos/YC-gamer 1.png" alt="logo" width="100"></a>
                 <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body p-0 mt-3">

@@ -280,7 +280,9 @@ li i{
     
 }
 .card-text{
-    font-weight: 400;
+    font-weight: 300;
+    font-size: small;
+    color: #818183;
 }
 .card-price{
     color: #824af8;
@@ -331,58 +333,80 @@ li i{
 
 /* ---------------------- */
 
-/* @media screen and (max-width: 930px){
-    .side-bar span{
+@media screen and (max-width: 880px){
+    .situation-profile{
         display: none;
-    }
-    .sidebar .icon{
-        font-size: 25px;
-    } 
-    .sidebar{
-        width: 70px;
-    }
-    .sidebar .top-sidebar{
-        display: none;
-    }
-    .logod{
-        display: none;
-    } 
-    .main{
-        left: 70px;
-        width: calc(100% - 70px);
     }
 }
-@media screen and (max-width: 500px){
-    .cartes-dahs{
-        padding: 25px 20px;
+@media screen and (max-width: 765px){
+    .nav-item{
+        display: none;
     }
-    .carte-dash-1{
-        margin-bottom: 15px;
+    .sidebar{
+        width: 80px;
     }
-    .carte-dash-2{
-        margin-bottom: 15px;
+    .sidebar-bottom-items a,
+    .sidebar-items a{
+        padding-left: 20px;
     }
-    .carte-dash-3{
-        margin-bottom: 15px;
+    .main-content{
+        width: calc(100% - 80px);
     }
-    .carte-dash-4{
-        margin-bottom: 15px;
+}
+
+@media screen and (max-width: 590px){
+    .search-profil{
+        width: calc(100% - 200px);
+    }
+    .logo img{
+        width: 120px;
+    }
+    .logo{
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 575px){
+    .cards-games{
+        flex-direction: column;
+        align-items: center;
+    }
+    .card-jeux{
+        /* min-width: 274px; */
+        width: 280px;
     }
     .img-1{
         width: 80px;
+        bottom: 18px;
     }
     .img-2{
         width: 60px;
     }
     .img-3{
-        width: 70px;
-        bottom: 20px;
+        width: 90px;
     }
     .img-4{
         width: 80px;
-        bottom: 22px;
+        bottom: 24px;
     }
-} */
+    .card-dash{
+        width: 100%;
+        min-width: 300px;
+    }
+    .title h4{
+        font-size: large;
+    }
+}
+
+@media screen and (max-width: 460px){
+    .card-dash{
+        width: 100%;
+        min-width: 190px;
+    }
+    .card-jeux{
+        width: 190px;
+    }
+} 
 
 /* ---------------------- */
 
