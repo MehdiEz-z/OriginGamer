@@ -13,9 +13,9 @@ if(isset($_GET['Sid'])){
     $requete    ="DELETE FROM games_info WHERE id='$id'";
     $query      =mysqli_query($connect,$requete);
     if($query){
-        $_SESSION['message'] = "Jeu supprimé avec succé !";
+        header('location:dashboard.php');
     }
-
+    
 }   
 ?>
 
@@ -25,22 +25,19 @@ if(isset($_GET['Sid'])){
                 <div class="title">
                     <h4>Tableau de bord</h4>
                 </div>
-                <?php if (isset($_SESSION['message'])): ?>
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong>Génial!</strong>
-                        <?php 
-                            echo $_SESSION['message']; 
-                            unset($_SESSION['message']);	
-                        ?>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert"></span>
-                    </div>
-                <?php endif ?>
                 <div class="cards">
 
                     <div class="cards-pc">
                         <div class="card-dash card-1">
                             <div class="card-content">
-                                <div class="number text-white fs-2 fw-bold">25</div>
+                                <div class="number text-white fs-2 fw-bold">
+                                <?php
+                                    $requete    = "SELECT * FROM games_info WHERE category_id = 1 ";
+                                    $query      = mysqli_query($connect, $requete);
+                                    
+                                    echo mysqli_num_rows($query);                                                           
+                                ?>   
+                                </div>
                                 <div class="card-name text-white">Jeux Pc</div>
                             </div>
                             <div class="img-card">
@@ -77,7 +74,14 @@ if(isset($_GET['Sid'])){
                     <div class="card-ps5">
                         <div class="card-dash card-2 ">
                             <div class="card-content">
-                                <div class="number text-white fs-2 fw-bold">25</div>
+                                <div class="number text-white fs-2 fw-bold">
+                                <?php
+                                    $requete    = "SELECT * FROM games_info WHERE category_id = 2";
+                                    $query      = mysqli_query($connect, $requete);
+                                    
+                                    echo mysqli_num_rows($query);                                                           
+                                ?> 
+                                </div>
                                 <div class="card-name text-white">Jeux PS5</div>    
                             </div>
                             <div class="img-card">
@@ -112,7 +116,14 @@ if(isset($_GET['Sid'])){
                     <div class="card-xbox">
                         <div class="card-dash card-3">
                             <div class="card-content">
-                                <div class="number text-white fs-2 fw-bold">25</div>
+                                <div class="number text-white fs-2 fw-bold">
+                                <?php
+                                    $requete    = "SELECT * FROM games_info WHERE category_id = 3 ";
+                                    $query      = mysqli_query($connect, $requete);
+                                    
+                                    echo mysqli_num_rows($query);                                                           
+                                ?> 
+                                </div>
                                 <div class="card-name text-white">Jeux XBOX Serie X</div>
                             </div>
                             <div class="img-card">
@@ -147,7 +158,14 @@ if(isset($_GET['Sid'])){
                     <div class="card-xbox">
                         <div class="card-dash card-4">
                             <div class="card-content">
-                                <div class="number text-white fs-2 fw-bold">25</div>
+                                <div class="number text-white fs-2 fw-bold">
+                                <?php
+                                    $requete    = "SELECT * FROM games_info WHERE category_id = 4 ";
+                                    $query      = mysqli_query($connect, $requete);
+                                    
+                                    echo mysqli_num_rows($query);                                                           
+                                ?> 
+                                </div>
                                 <div class="card-name text-white">Jeux Nintindo</div>
                             </div>
                             <div class="img-card">

@@ -23,25 +23,25 @@ if(isset($_POST['ajouter'])){
     $query          =mysqli_query($connect,$requete);
     
     if($query){
-        $_SESSION['message'] = "Jeu ajouté avec succé !";      
+        header('location:dashboard.php');
     }
-    header('location:dashboard.php');
+    
 }
     
 ?>  
     <div class="main-content">
-        <div class="overview">
+        <div class="overview row d-flex justify-content-center ">
             <div class="title">
                 <h4>Ajouter des jeux</h4>
             </div>
-            <div class="form-add row d-flex justify-content-center">
+            <div class="form-add col-md-8 d-flex flex-column text-center">
                 <form action="" method="post" enctype="multipart/form-data"> 
                     <input type="hidden" name="game-id"> 
-                    <div class="mb-5 text-start">
+                    <div class="mb-3 text-start">
                         <label class="col-form-label fw-semibold">Titre*</label>
                         <input class="form-control" name="game-titre" type="text" required>
                     </div>
-                    <div class="mb-4 text-start">
+                    <div class="mb-3 text-start">
                         <label class="col-form-label fw-semibold">Categories*</label>
                         <select class="form-select" name="game-categorie" required>
                             <option value="">Please select</option>
@@ -51,19 +51,19 @@ if(isset($_POST['ajouter'])){
                             <option value="4">Jeux Nintindo</option>
                         </select>
                     </div>
-                    <div class="mb-4 text-start">
+                    <div class="mb-3 text-start">
                         <label class="col-form-label fw-semibold">description*</label>
                         <textarea class="form-control" name="game-description" required></textarea>
                     </div>
-                    <div class="mb-4 text-start">
+                    <div class="mb-3 text-start">
                         <label class="col-form-label fw-semibold">Images*</label>
                         <input class="form-control" name="game-image" type="file">
                     </div>
-                    <div class="mb-4 text-start">
+                    <div class="mb-3 text-start">
                         <label class="form-label fw-semibold">Prix*</label>
                         <input class="form-control" name="game-price" type="number" min="1" max="100000" required>
                     </div>
-                    <div class="mb-4 text-start"> 
+                    <div class="mb-5 text-start"> 
                         <label class="form-label fw-semibold">Date*</label>
                         <input class="form-control" name="game-date" type="datetime-local" value="" required>
                     </div>
