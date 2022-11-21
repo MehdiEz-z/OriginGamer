@@ -379,7 +379,6 @@ li i{
         align-items: center;
     }
     .card-jeux{
-        /* min-width: 274px; */
         width: 280px;
     }
     .img-1{
@@ -390,7 +389,7 @@ li i{
         width: 60px;
     }
     .img-3{
-        width: 90px;
+        width: 80px;
     }
     .img-4{
         width: 80px;

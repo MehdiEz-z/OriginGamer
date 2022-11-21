@@ -1,14 +1,40 @@
 <?php
-$Title='Ajouter | Origin Gamer';
+$Title='Modifier | Origin Gamer';
 include('../includes/header.php');
+include('../includes/sidebar.php');  
 
-if(!isset($_SESSION['email'])){
-    header('location:../pages/login.php');
+if(isset($_GET['id'])){
+    $id             =$_GET['id'];
+    $requete        ="SELECT * FROM games_info WHERE id = '$id' ";
+    $query          =mysqli_query($connect,$requete);
+    $rows           =mysqli_fetch_assoc($query);
 }
-include('../includes/sidebar.php');
+if(isset($_POST['modifier'])){
+    $titre          =mysqli_real_escape_string($connect,$_POST['game-titre']);
+    $description    =mysqli_real_escape_string($connect,$_POST['game-description']);
+    $prix           =$_POST['game-price']; 
+    $categorie      =$_POST['game-categorie'];
+    $date           =$_POST['game-date'];
 
-    
+    if($_FILES["game-image"]["name"] != ""){
+        $image       =$_FILES["game-image"]["name"];
+        move_uploaded_file($_FILES['game-image']['tmp_name'],'imgs-jeux/'.$image);
+    }else{
+        $image       =$_POST['old-game-image'];
+    }
+
+    $requete        ="UPDATE `games_info` SET `title`='$titre',`description`='$description',
+                        `price`='$prix',`date`='$date',`category_id`='$categorie',`image`='$image' 
+                            WHERE id= '$id' ";
+    $query          =mysqli_query($connect,$requete);
+    if($query){
+        header('location:dashboard.php');
+    }
+}
+
 ?>  
+
+
     <div class="main-content">
         <div class="overview row d-flex justify-content-center ">
             <div class="title">
@@ -16,39 +42,40 @@ include('../includes/sidebar.php');
             </div>
             <div class="form-add col-md-8 d-flex flex-column text-center">
                 <form action="" method="post" enctype="multipart/form-data"> 
-                    <input type="hidden" name="game-id"> 
+                    <input type="hidden" name="game-id" value = "<?php echo $rows['id'] ?>"> 
                     <div class="mb-2 text-start">
                         <label class="col-form-label fw-semibold">Titre*</label>
-                        <input class="form-control" name="game-titre" type="text" required>
+                        <input class="form-control" name="game-titre" type="text" value="<?php echo $rows['title'] ?>" required>
                     </div>
                     <div class="mb-2 text-start">
                         <label class="col-form-label fw-semibold">Categories*</label>
                         <select class="form-select" name="game-categorie" required>
                             <option value="">Please select</option>
-                            <option value="1">Jeux Pc</option>
-                            <option value="2">Jeux PS5</option>
-                            <option value="3">Jeux XBOX</option>
-                            <option value="4">Jeux Nintindo</option>
+                            <option value="1"<?php echo ($rows['category_id'] == 1) ? "selected" : ""; ?>>Jeux Pc</option>
+                            <option value="2"<?php echo ($rows['category_id'] == 2) ? "selected" : ""; ?>>Jeux PS5</option>
+                            <option value="3"<?php echo ($rows['category_id'] == 3) ? "selected" : ""; ?>>Jeux XBOX</option>
+                            <option value="4"<?php echo ($rows['category_id'] == 4) ? "selected" : ""; ?>>Jeux Nintindo</option>
                         </select>
                     </div>
                     <div class="mb-2 text-start">
                         <label class="col-form-label fw-semibold">Description*</label>
-                        <textarea class="form-control" name="game-description" rows="1" required></textarea>
+                        <textarea class="form-control" name="game-description"  rows="1" required><?php echo $rows['description'] ?></textarea>
                     </div>
                     <div class="mb-2 text-start">
                         <label class="col-form-label fw-semibold">Images*</label>
                         <input class="form-control" name="game-image" type="file">
+                        <input class="form-control" name="old-game-image" value="<?php echo $rows['image'] ?>" type="hidden">
                     </div>
                     <div class="mb-2 text-start">
                         <label class="form-label fw-semibold">Prix*</label>
-                        <input class="form-control" name="game-price" type="number" min="1" max="100000" step="0.01" required>
+                        <input class="form-control" name="game-price" value="<?php echo $rows['price'] ?>" type="number" min="1" max="100000" step="0.01" required>
                     </div>
                     <div class="mb-4 text-start"> 
                         <label class="form-label fw-semibold">Date*</label>
-                        <input class="form-control" name="game-date" type="datetime-local" value="" required>
+                        <input class="form-control" name="game-date" type="datetime-local" value="<?php echo $rows['date'] ?>" required>
                     </div>
                     <div class="mb-3">
-                        <input type="submit" name="ajouter" value="Ajouter" class="login-btn rounded-pill border-0 py-3">
+                        <input type="submit" name="modifier" value="modifier" class="login-btn rounded-pill border-0 py-3">
                     </div>
                     
                 </form>  

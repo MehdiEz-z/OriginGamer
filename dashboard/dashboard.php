@@ -1,10 +1,6 @@
 <?php
 $Title='Dashboard | Origin Gamer';
 include('../includes/header.php');
-
-if(!isset($_SESSION['email'])){
-    header('location:../pages/login.php');
-}
 include('../includes/sidebar.php');
 
 if(isset($_POST['sauvegarder'])){
@@ -14,11 +10,10 @@ if(isset($_POST['sauvegarder'])){
     $categorie      =$_POST['game-categorie'];
     $date           =$_POST['game-date'];
     $image          =$_FILES["game-image"]["name"];
-    $folder         ="imgs-jeux/".$image;
-    move_uploaded_file($_FILES['game-image']['tmp_name'],$folder);
+    move_uploaded_file($_FILES['game-image']['tmp_name'],'imgs-jeux/'.$image);
 
     $requete        ="INSERT INTO games_info (title,description,price,date,category_id,image) 
-                        VALUES ('$titre','$description','$prix','$date','$categorie','$folder')";
+                        VALUES ('$titre','$description','$prix','$date','$categorie','$image')";
     $query          =mysqli_query($connect,$requete);
     
     if($query){
@@ -72,13 +67,13 @@ if(isset($_GET['Sid'])){
                                 
                                 echo'
                                     <div class="card-jeux">
-                                        <img class="card-img-top rounded-top" src="'.$rows['image'].'" alt="...">
+                                        <img class="card-img-top rounded-top" src="imgs-jeux/'.$rows['image'].'" alt="...">
                                         <div class="card-body">
                                             <h5 class="card-title mb-2">'.$rows['title'].'</h5>
                                             <p class="card-text text-truncate mb-1">'.$rows['description'].'</p>
                                             <h6 class="card-price mb-2">'.$rows['price'].'Dhs</h6>
                                             <h6 class="card-date mb-2">'.$rows['date'].'</h6>
-                                            <a href="dashboard.php?id='.$rows['id'].'" class="btn btn-warning">Modifier</a>
+                                            <a href="modifier.php?id='.$rows['id'].'" class="btn btn-warning">Modifier</a>
                                             <a href="dashboard.php?Sid='.$rows['id'].'"><i class="delete fa-solid fa-xmark text-danger"></i></a>
                                         </div>
                                     </div>';                         
@@ -118,7 +113,7 @@ if(isset($_GET['Sid'])){
                                             <p class="card-text text-truncate mb-1">'.$rows['description'].'</p>
                                             <h6 class="card-price mb-2">'.$rows['price'].'Dhs</h6>
                                             <h6 class="card-date mb-2">'.$rows['date'].'</h6>
-                                            <a href="dashboard.php?id='.$rows['id'].'" class="btn btn-warning">Modifier</a>
+                                            <a href="modifier.php?id='.$rows['id'].'" class="btn btn-warning">Modifier</a>
                                             <a href="dashboard.php?Sid='.$rows['id'].'"><i class="delete fa-solid fa-xmark text-danger"></i></a>
                                         </div>
                                     </div>';                         
@@ -157,7 +152,7 @@ if(isset($_GET['Sid'])){
                                             <p class="card-text text-truncate mb-1">'.$rows['description'].'</p>
                                             <h6 class="card-price mb-2">'.$rows['price'].'Dhs</h6>
                                             <h6 class="card-date mb-2">'.$rows['date'].'</h6>
-                                            <a href="dashboard.php?id='.$rows['id'].'" class="btn btn-warning">Modifier</a>
+                                            <a href="modifier.php?id='.$rows['id'].'" class="btn btn-warning">Modifier</a>
                                             <a href="dashboard.php?Sid='.$rows['id'].'"><i class="delete fa-solid fa-xmark text-danger"></i></a>
                                         </div>
                                     </div>';                         
@@ -167,7 +162,7 @@ if(isset($_GET['Sid'])){
                     </div>
                     
 
-                    <div class="card-xbox">
+                    <div class="card-nintindo">
                         <div class="card-dash card-4">
                             <div class="card-content">
                                 <div class="number text-white fs-2 fw-bold">
@@ -196,7 +191,7 @@ if(isset($_GET['Sid'])){
                                             <p class="card-text text-truncate mb-1">'.$rows['description'].'</p>
                                             <h6 class="card-price mb-2">'.$rows['price'].'Dhs</h6>
                                             <h6 class="card-date mb-2">'.$rows['date'].'</h6>
-                                            <a href="dashboard.php?id='.$rows['id'].'" class="btn btn-warning">Modifier</a>
+                                            <a href="modifier.php?id='.$rows['id'].'" class="btn btn-warning">Modifier</a>
                                             <a href="dashboard.php?Sid='.$rows['id'].'"><i class="delete fa-solid fa-xmark text-danger"></i></a>
                                         </div>
                                     </div>';                         

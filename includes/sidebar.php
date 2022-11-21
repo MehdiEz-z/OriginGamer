@@ -1,3 +1,10 @@
+<?php
+if(!isset($_SESSION['email'])){
+    header('location:../pages/login.php');
+}
+?>
+
+
 
 <body class="dashb">
     <section class="header">
