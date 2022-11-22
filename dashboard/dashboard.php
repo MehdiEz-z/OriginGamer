@@ -28,6 +28,8 @@ if(isset($_GET['Sid'])){
     $requete    ="DELETE FROM games_info WHERE id='$id'";
     $query      =mysqli_query($connect,$requete);
     if($query){
+        unlink("imgs-jeux/".$_GET['imgs-jeux']);
+
         header('location:dashboard.php');
     }
     
@@ -74,7 +76,7 @@ if(isset($_GET['Sid'])){
                                             <h6 class="card-price mb-2">'.$rows['price'].'Dhs</h6>
                                             <h6 class="card-date mb-2">'.$rows['date'].'</h6>
                                             <a href="modifier.php?id='.$rows['id'].'" class="btn btn-warning">Modifier</a>
-                                            <a href="dashboard.php?Sid='.$rows['id'].'"><i class="delete fa-solid fa-xmark text-danger"></i></a>
+                                            <a href="dashboard.php?Sid='.$rows['id'].'&imgs-jeux='.$rows['image'].'"><i class="delete fa-solid fa-xmark text-danger"></i></a>
                                         </div>
                                     </div>';                         
                             }
@@ -114,7 +116,7 @@ if(isset($_GET['Sid'])){
                                             <h6 class="card-price mb-2">'.$rows['price'].'Dhs</h6>
                                             <h6 class="card-date mb-2">'.$rows['date'].'</h6>
                                             <a href="modifier.php?id='.$rows['id'].'" class="btn btn-warning">Modifier</a>
-                                            <a href="dashboard.php?Sid='.$rows['id'].'"><i class="delete fa-solid fa-xmark text-danger"></i></a>
+                                            <a href="dashboard.php?Sid='.$rows['id'].'&imgs-jeux='.$rows['image'].'"><i class="delete fa-solid fa-xmark text-danger"></i></a>
                                         </div>
                                     </div>';                         
                             }
@@ -153,7 +155,7 @@ if(isset($_GET['Sid'])){
                                             <h6 class="card-price mb-2">'.$rows['price'].'Dhs</h6>
                                             <h6 class="card-date mb-2">'.$rows['date'].'</h6>
                                             <a href="modifier.php?id='.$rows['id'].'" class="btn btn-warning">Modifier</a>
-                                            <a href="dashboard.php?Sid='.$rows['id'].'"><i class="delete fa-solid fa-xmark text-danger"></i></a>
+                                            <a href="dashboard.php?Sid='.$rows['id'].'&imgs-jeux='.$rows['image'].'"><i class="delete fa-solid fa-xmark text-danger"></i></a>
                                         </div>
                                     </div>';                         
                             }
@@ -191,7 +193,7 @@ if(isset($_GET['Sid'])){
                                             <p class="card-text text-truncate mb-1">'.$rows['description'].'</p>
                                             <h6 class="card-price mb-2">'.$rows['price'].'Dhs</h6>
                                             <h6 class="card-date mb-2">'.$rows['date'].'</h6>
-                                            <a href="modifier.php?id='.$rows['id'].'" class="btn btn-warning">Modifier</a>
+                                            <a href="modifier.php?id='.$rows['id'].'&imgs-jeux='.$rows['image'].'" class="btn btn-warning">Modifier</a>
                                             <a href="dashboard.php?Sid='.$rows['id'].'"><i class="delete fa-solid fa-xmark text-danger"></i></a>
                                         </div>
                                     </div>';                         

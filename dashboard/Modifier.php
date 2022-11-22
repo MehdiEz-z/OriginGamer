@@ -9,6 +9,7 @@ if(isset($_GET['id'])){
     $query          =mysqli_query($connect,$requete);
     $rows           =mysqli_fetch_assoc($query);
 }
+
 if(isset($_POST['modifier'])){
     $titre          =mysqli_real_escape_string($connect,$_POST['game-titre']);
     $description    =mysqli_real_escape_string($connect,$_POST['game-description']);
@@ -19,6 +20,7 @@ if(isset($_POST['modifier'])){
     if($_FILES["game-image"]["name"] != ""){
         $image       =$_FILES["game-image"]["name"];
         move_uploaded_file($_FILES['game-image']['tmp_name'],'imgs-jeux/'.$image);
+        unlink("imgs-jeux/" .$_POST['old-game-image']);
     }else{
         $image       =$_POST['old-game-image'];
     }
