@@ -51,10 +51,16 @@ if(isset($_POST['modifier'])){
                         <label class="col-form-label fw-semibold">Categories*</label>
                         <select class="form-select" name="game-categorie" required>
                             <option value="">Please select</option>
-                            <option value="1"<?php echo ($rows['category_id'] == 1) ? "selected" : ""; ?>>Jeux Pc</option>
-                            <option value="2"<?php echo ($rows['category_id'] == 2) ? "selected" : ""; ?>>Jeux PS5</option>
-                            <option value="3"<?php echo ($rows['category_id'] == 3) ? "selected" : ""; ?>>Jeux XBOX</option>
-                            <option value="4"<?php echo ($rows['category_id'] == 4) ? "selected" : ""; ?>>Jeux Nintindo</option>
+                            <?php
+                                $requete    = "SELECT * FROM category";
+                                $query      =mysqli_query($connect,$requete);
+                                while($category   =mysqli_fetch_assoc($query)){
+                            ?>   
+                                <option value="<?php echo $category['id']; ?>" <?php echo ($rows["category_id"] == $category["id"]) ? "selected" : "" ?>> <?php echo $category["name"] ?></option>
+                            <?php       
+                                }
+                            ?>
+            
                         </select>
                     </div>
                     <div class="mb-2 text-start">

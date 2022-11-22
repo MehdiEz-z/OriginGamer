@@ -107,7 +107,7 @@ if(isset($_GET['Sid'])){
                                 
                                 echo'
                                     <div class="card-jeux">
-                                        <img class="card-img-top rounded-top" src="'.$rows['image'].'" alt="...">
+                                        <img class="card-img-top rounded-top" src="imgs-jeux/'.$rows['image'].'" alt="...">
                                         <div class="card-body">
                                             <h5 class="card-title mb-2">'.$rows['title'].'</h5>
                                             <p class="card-text text-truncate mb-1">'.$rows['description'].'</p>
@@ -146,7 +146,7 @@ if(isset($_GET['Sid'])){
                                 
                                 echo'
                                     <div class="card-jeux">
-                                        <img class="card-img-top rounded-top" src="'.$rows['image'].'" alt="...">
+                                        <img class="card-img-top rounded-top" src="imgs-jeux/'.$rows['image'].'" alt="...">
                                         <div class="card-body">
                                             <h5 class="card-title mb-2">'.$rows['title'].'</h5>
                                             <p class="card-text text-truncate mb-1">'.$rows['description'].'</p>
@@ -185,7 +185,7 @@ if(isset($_GET['Sid'])){
                                 
                                 echo'
                                     <div class="card-jeux">
-                                        <img class="card-img-top rounded-top" src="'.$rows['image'].'" alt="...">
+                                        <img class="card-img-top rounded-top" src="imgs-jeux/'.$rows['image'].'" alt="...">
                                         <div class="card-body">
                                             <h5 class="card-title mb-2">'.$rows['title'].'</h5>
                                             <p class="card-text text-truncate mb-1">'.$rows['description'].'</p>
@@ -223,10 +223,15 @@ if(isset($_GET['Sid'])){
                             <label class="form-label">Categories*</label>
                             <select class="form-select" name="game-categorie" required>
                                 <option value="">Please select</option>
-                                <option value="1">Jeux Pc</option>
-                                <option value="2">Jeux PS5</option>
-                                <option value="3">Jeux XBOX</option>
-                                <option value="4">Jeux Nintindo</option>
+                                <?php
+                                    $requete    = "SELECT * FROM category";
+                                    $query      =mysqli_query($connect,$requete);
+                                    while($category   =mysqli_fetch_assoc($query)){
+                                        echo'
+                                            <option value="'.$category['id'].'">'.$category['name'].'</option>';  
+                                    }
+                                ?>
+                                                                             
                             </select>
                         </div>
     
