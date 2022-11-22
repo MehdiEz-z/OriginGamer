@@ -22,7 +22,7 @@
                 mysqli_query($connect, $inserer);
                 header('location:login.php');
             }       
-}
+    }
 ?>
 
     <div class="w-100 row d-flex justify-content-center mt-5 ms-1">

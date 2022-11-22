@@ -40,7 +40,7 @@ if(isset($_POST['modifier'])){
     <div class="main-content">
         <div class="overview row d-flex justify-content-center ">
             <div class="title">
-                <h4>Ajouter des jeux</h4>
+                <h4>Modification des jeux</h4>
             </div>
             <div class="form-add col-md-8 d-flex flex-column text-center">
                 <form action="" method="post" enctype="multipart/form-data"> 

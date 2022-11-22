@@ -223,10 +223,10 @@ li i{
     height: auto;
 }
 .card-1{
-    background: linear-gradient(82deg, rgba(130,74,248,1) 0%, rgba(177,79,252,1) 100%);
+    background: linear-gradient(82deg, #814af7 0%, #b14ffc 100%);
 }
 .card-2{
-    background: linear-gradient(82deg, rgba(26,202,197,1) 0%, rgba(6,73,241,1) 100%);
+    background: linear-gradient(82deg, #1acac5 0%, #0649f1 100%);
 }
 .card-3{
     background: linear-gradient(82deg, rgba(177,79,252,1) 10%, rgba(130,74,248,1) 100%);
