@@ -136,7 +136,7 @@ if(isset($_GET['Sid'])){
                                     echo mysqli_num_rows($query);                                                           
                                 ?> 
                                 </div>
-                                <div class="card-name text-white">Jeux XBOX Serie X</div>
+                                <div class="card-name text-white">Jeux XBOX</div>
                             </div>
                             <div class="img-card">
                                 <img class="img-3 position-absolute" src="../assets/images/items/xbox.png" alt="img">

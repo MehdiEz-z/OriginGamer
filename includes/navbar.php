@@ -24,19 +24,19 @@
         </button>
         <div class="offcanvas offcanvas-end text-bg-white" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
             <div class="offcanvas-header">
-            <a href="accueil.php"><img class ="logo-nav me-3" src="../assets/images/logos/YC-gamer 1.png" alt="logo" width="100"></a>
+            <a href="../pages/acceuil.php"><img class ="logo-nav me-3" src="../assets/images/logos/YC-gamer 1.png" alt="logo" width="100"></a>
                 <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body p-0 mt-3">
                 <ul class="navbar-nav justify-content-end flex-grow-1">
-                    <li class="nav-item lien">
+                    <li class="lien">
                         <a class="nav-link fs-6 ps-4 py-3" href="#">Acheter vos jeux</a>
                     </li>
-                    <li class="nav-item lien">
-                        <a class="nav-link fs-6 ps-4 py-3" href="login.php">Connectez-vous</a>
+                    <li class="lien">
+                        <a class="nav-link fs-6 ps-4 py-3" href="../pages/login.php">Connectez-vous</a>
                     </li>
-                    <li class="nav-item lien">
-                        <a class="nav-link fs-6 ps-4 py-3" href="signup.php">Inscrivez-vous</a>
+                    <li class="lien">
+                        <a class="nav-link fs-6 ps-4 py-3" href="../pages/signup.php">Inscrivez-vous</a>
                     </li>
                 </ul>
                 <form class="d-flex mt-3 ms-3" role="search">
