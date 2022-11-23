@@ -9,7 +9,7 @@ if(isset($_POST['sauvegarder'])){
     $prix           =$_POST['game-price']; 
     $categorie      =$_POST['game-categorie'];
     $date           =$_POST['game-date'];
-    $image          =$_FILES["game-image"]["name"];
+    $image          =$_FILES["game-image"]["name"].'_'.uniqid();
     move_uploaded_file($_FILES['game-image']['tmp_name'],'imgs-jeux/'.$image);
 
     $requete        ="INSERT INTO games_info (title,description,price,date,category_id,image) 

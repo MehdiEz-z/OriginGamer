@@ -18,7 +18,7 @@ if(isset($_POST['modifier'])){
     $date           =$_POST['game-date'];
 
     if($_FILES["game-image"]["name"] != ""){
-        $image       =$_FILES["game-image"]["name"];
+        $image       =$_FILES["game-image"]["name"].'_'.uniqid();
         move_uploaded_file($_FILES['game-image']['tmp_name'],'imgs-jeux/'.$image);
         unlink("imgs-jeux/" .$_POST['old-game-image']);
     }else{
