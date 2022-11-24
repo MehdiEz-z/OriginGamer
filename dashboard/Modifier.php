@@ -43,12 +43,16 @@ if(isset($_POST['modifier'])){
                 <h4>Modification des jeux</h4>
             </div>
             <div class="form-add col-md-8 d-flex flex-column text-center">
-                <form action="" method="post" enctype="multipart/form-data"> 
+                <form action="" method="post" enctype="multipart/form-data" data-parsley-validate>
+                     
                     <input type="hidden" name="game-id" value = "<?php echo $rows['id'] ?>"> 
+
                     <div class="mb-2 text-start">
                         <label class="col-form-label fw-semibold">Titre*</label>
-                        <input class="form-control" name="game-titre" type="text" value="<?php echo $rows['title'] ?>" required>
+                        <input class="form-control" name="game-titre" type="text" value="<?php echo $rows['title'] ?>" data-parsley-pattern="[a-zA-Z0-9\s]+" 
+                             data-parsley-trigger="keyup" required>
                     </div>
+
                     <div class="mb-2 text-start">
                         <label class="col-form-label fw-semibold">Categories*</label>
                         <select class="form-select" name="game-categorie" required>
@@ -65,23 +69,30 @@ if(isset($_POST['modifier'])){
             
                         </select>
                     </div>
+
                     <div class="mb-2 text-start">
                         <label class="col-form-label fw-semibold">Description*</label>
-                        <textarea class="form-control" name="game-description"  rows="1" required><?php echo $rows['description'] ?></textarea>
+                        <textarea class="form-control" name="game-description"  rows="1" data-parsley-pattern="[a-zA-Z0-9\s]+" 
+                                data-parsley-pattern-message="Description must contain Letters & numbers only." data-parsley-trigger="keyup"
+                                required><?php echo $rows['description'] ?></textarea>
                     </div>
+
                     <div class="mb-2 text-start">
                         <label class="col-form-label fw-semibold">Images*</label>
                         <input class="form-control" name="game-image" type="file">
                         <input class="form-control" name="old-game-image" value="<?php echo $rows['image'] ?>" type="hidden">
                     </div>
+
                     <div class="mb-2 text-start">
                         <label class="form-label fw-semibold">Prix*</label>
                         <input class="form-control" name="game-price" value="<?php echo $rows['price'] ?>" type="number" min="1" max="100000" step="0.01" required>
                     </div>
+
                     <div class="mb-4 text-start"> 
                         <label class="form-label fw-semibold">Date*</label>
                         <input class="form-control" name="game-date" type="datetime-local" value="<?php echo $rows['date'] ?>" required>
                     </div>
+
                     <div class="mb-3">
                         <input type="submit" name="modifier" value="modifier" class="login-btn rounded-pill border-0 py-3">
                     </div>
@@ -90,7 +101,6 @@ if(isset($_POST['modifier'])){
             </div>
         </div>
     </div>
-
-
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>

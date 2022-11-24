@@ -209,7 +209,7 @@ if(isset($_GET['Sid'])){
     <div class="modal fade" id="modal-game">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action="" method="POST" enctype="multipart/form-data">
+				<form action="" method="POST" enctype="multipart/form-data" data-parsley-validate>
 					<div class="modal-header">
 						<h5 class="modal-title">Ajouter un jeux</h5>
 						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
@@ -218,7 +218,7 @@ if(isset($_GET['Sid'])){
                         <input type="hidden" name="game-id"> 
                         <div class="mb-2">
                             <label class="form-label">Titre*</label>
-                            <input class="form-control" name="game-titre" type="text" required>
+                            <input class="form-control" name="game-titre" type="text" data-parsley-pattern="[a-zA-Z0-9\s]+" data-parsley-trigger="keyup" required>
                         </div>
 
                         <div class="mb-2 text-start">
@@ -239,7 +239,8 @@ if(isset($_GET['Sid'])){
     
                         <div class="mb-2">
                             <label class="col-form-label ">Description*</label>
-                            <textarea class="form-control" name="game-description" rows="1" required></textarea>
+                            <textarea class="form-control" name="game-description" rows="1" data-parsley-pattern="[a-zA-Z0-9\s]+" 
+                                data-parsley-pattern-message="Description must contain Letters & numbers only." data-parsley-trigger="keyup" required></textarea>
                         </div>
                         <div class="mb-2">
                             <label class="col-form-label">Images*</label>
@@ -263,6 +264,6 @@ if(isset($_GET['Sid'])){
 			</div>
 		</div>
 	</div>
-
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>

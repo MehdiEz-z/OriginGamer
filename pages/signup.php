@@ -14,7 +14,7 @@
         $query      = mysqli_query($connect, $requete);
 
             if(mysqli_num_rows($query) > 0){
-                $error[] = 'Cet utilisateur exist deja'; 
+                $error = 'Cet utilisateur exist deja'; 
             }else{
                 $inserer   = "INSERT INTO user_infos (`username`,`email`,`password`) 
                     VALUE ('$username','$email ','$password')";
@@ -32,9 +32,7 @@
             </div>
             <?php
             if(isset($error)){
-                foreach($error as $error){
                     echo '<span class="d-block mb-3" style="color: #B94A48;">'.$error.'</span>';
-                };
             };  
             ?>
 

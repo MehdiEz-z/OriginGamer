@@ -22,10 +22,10 @@
                 $_SESSION['username'] = $result['username'];
                 header('location:../dashboard/dashboard.php');
             }else{
-                $error[] = 'Mot de passe incorect';    
+                $error = 'Mot de passe incorect';    
             }
         }else 
-        $error[] = 'Email incorect';    
+        $error = 'Email incorect';    
     };
 ?>
 
@@ -36,20 +36,18 @@
                 <h2>CONNECTEZ-VOUS</h2>
             </div>
             <?php
-            if(isset($error)){
-                foreach($error as $error){
-                    echo '<span class="d-block mb-4" style="color: #B94A48;">'.$error.'</span>';
-                };
+            if(isset($error)){             
+                    echo '<span class="d-block mb-4" style="color: #B94A48;">'.$error.'</span>';              
             };  
             ?>
-            <form action="" method="post">  
+            <form action="" method="post" data-parsley-validate>  
                 <div class="mb-3 text-start">
                     <label class="col-form-label fw-medium">Email*</label>
-                    <input class="form-control" name="email" type="email" placeholder="mail@website.com" required>
+                    <input class="form-control" name="email" type="email" placeholder="mail@website.com" data-parsley-type="email" required>
                 </div>
                 <div class="mb-4 text-start">
                     <label class="col-form-label fw-medium">Mot de passe*</label>
-                    <input class="form-control" name="password" type="password" placeholder="mot de passe" required>
+                    <input class="form-control" name="password" type="password" placeholder="mot de passe" data-parsley-minlength="8" required>
                 </div>
                 <div class="lien mb-4 text-end">
                     <a href="#" class="text-decoration-none">Mot de passe oublié ?</a>					
@@ -64,5 +62,6 @@
             </form>     
         </div>
     </div>
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>
